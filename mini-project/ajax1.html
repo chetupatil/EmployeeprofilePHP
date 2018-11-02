@@ -1,0 +1,42 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Untitled Document</title>
+</head>
+
+<body>
+<form>
+TableName:
+<input type="text" name="input">
+<input type="submit" onClick="loadDOC()">
+	</form>
+<p id="demo"></p>
+<script>
+	//asynchronous 
+function loadDOC()
+	{
+	//	alert("hi");
+		var xml1;
+				
+	 xml1=new XMLHttpRequest();
+		alert(xml1);
+			
+		xml1.onreadystatechange=function()
+		{
+			//alert("hello");
+			if(xml1.readyState==4 && xml1.status==200)
+				{
+					//alert("namasate");
+					document.getElementById("demo").innerHTML=this.responseText;
+				}
+		}
+			xml1.open("GET","forFill.php",true);
+			xml1.send();
+		
+		
+		
+	}
+	</script>
+</body>
+</html>
